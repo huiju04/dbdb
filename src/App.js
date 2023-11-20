@@ -12,12 +12,12 @@ function App() {
   ]);
 
   let [따봉, 따봉변경] = useState(0);
-  // let [따봉2, 따봉변경2] = useState(0);
-  // let [따봉3, 따봉변경3] = useState(0);
+  let [따봉2, 따봉변경2] = useState(0);
+  let [따봉3, 따봉변경3] = useState(0);
   let [modal, setModal] = useState(false);
+
   // 자주 변경될거 같은 html부분은 state로 만들기
 
-  
   [1, 2, 3].map(function (a) {
     return;
   });
@@ -27,7 +27,6 @@ function App() {
       <div className="black-nav">
         <h4>ReactBlog</h4>
       </div>
-
       {/* <button
         onClick={() => {
           let copy = [...글제목];
@@ -53,7 +52,8 @@ function App() {
         }}
       >
         가나다순
-      </button> 가나다순 변경하는 버튼 */}
+      </button>{" "}
+      가나다순 변경하는 버튼 */}
 
       {/* <div className="list">
         <h4>
@@ -92,19 +92,13 @@ function App() {
         </h4>
         <p>2월 17일 발행</p>
       </div> */}
-
       {글제목.map(function (a, i) {
-        //지금 좋아요버튼을 누를 때 마다 모든 따봉갯수가 똑같이 1 증가하고 있습니다.
-        // 각각 개별적으로 증가하게 하려면 어떻게 해야할까요?
-        //(힌트) 지금 잘보면 따봉갯수를 기록할 state가 하나밖에 없어서 그렇습니다.
-        // 그걸 모든 글제목들이 가져다 쓰고 있어서 그런 것일 뿐임
-
         // 첫번째 자리는 array에 있던 데이터,
         // 두번째 자리는 반복문 돌때마다 0부터 1씩 증가하는 정수
         return (
           <div className="list" key={i}>
             <h4>
-              {글제목[i]}
+              {a}
               <span
                 onClick={() => {
                   따봉변경(따봉 + 1);
@@ -112,7 +106,7 @@ function App() {
               >
                 👍
               </span>
-              {따봉}
+              {[따봉, 따봉2, 따봉3]}
             </h4>
             <p>2월 17일 발행</p>
           </div>
@@ -122,17 +116,13 @@ function App() {
       1. 왼쪽 array 자료만큼 내부코드 실행해줌
       2. return 오른쪽에 있는걸 array로 담아줌
       3. 유용한 파라미터 2개 사용가능 */}
-
       {modal == true ? <Modal /> : null}
-
       {/* 컴포넌트 장점  
       1. 반복적인 html축약 
       2. 큰 페이지틀 
       3. 자주 변경되는것 */}
-
       {/* 컴포넌트 단점
       state 가져쓸떄 문제생김 */}
-
       {/* 동적인 ul만드는 step
       1. html css로 미리 디자인 완성
       2. ul의 현재 상태를 state로 저장됨
