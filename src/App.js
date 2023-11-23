@@ -2,6 +2,7 @@ import React from "react"
 import { Link, Route, Routes } from "react-router-dom"
 import { Home } from "./page/Home"
 import { About } from "./page/About"
+import { Profile } from "./page/Profile"
 
  const App = () =>{
   return (
@@ -19,6 +20,7 @@ import { About } from "./page/About"
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
+        <Route path="/profile/:username" element={<Profile/>} />
       </Routes>
     </div>
   )
