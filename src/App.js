@@ -1,11 +1,26 @@
 import React from "react"
-import { Route } from "react-router-dom"
+import { Link, Route, Routes } from "react-router-dom"
+import { Home } from "./page/Home"
+import { About } from "./page/About"
 
-export const App = () =>{
+ const App = () =>{
   return (
     <div>
-      <Route path="/home" element={<Home/>} />
-      <Route path="/about" element={<About/>} />
+      <div>
+        <ul>
+          <li>
+            <Link to="/">홈</Link>
+          </li>
+          <li>
+            <Link to="/about">소개</Link>
+          </li>
+        </ul>
+      </div>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
+      </Routes>
     </div>
   )
 }
+export default App;
